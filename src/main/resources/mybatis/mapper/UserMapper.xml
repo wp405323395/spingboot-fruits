@@ -17,23 +17,36 @@
 
     <!--sql – 可被其他语句引用的可重用语句块-->
     <sql id="colums">
-        id,name,password,community_name,create_time,user_type
+        id,name,password,community_name,create_time,user_desc,user_type
     </sql>
 
     <select id="findAll" resultMap="userResultMap">
         select
         <include refid="colums" />
-        from  user
+        from  user where user.user_type = #{userType}
     </select>
-
-    <select id="findById" resultMap="userResultMap">
+    
+    <select id="findUserById" resultMap="userResultMap">
         select
         <include refid="colums" />
-        from  user
-        where  id=#{id}
+        from  user where user.id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.wangpan.entity.User" >
+    <select id="insertUser" parameterType="com.wangpan.entity.User">
+        INSERT INTO
+            user
+            (name, password, community_name, user_desc, user_type)
+        VALUES
+            (#{name}, #{password}, #{communityName}, #{userDesc}, #{userType})
+    </select>
+    
+    <select id="findByCarpoolingId" resultMap="userResultMap">
+        select t1.id, t1.name, t1.password, t1.community_name, t1.create_time, t1.user_type from user t1, userCarpooling t2  where t1.id = t2.user_id;
+    </select>
+    
+    
+
+<!--     <insert id="insert" parameterType="com.wangpan.entity.User" >
        INSERT INTO
             user
             (username,age,pwd)
@@ -57,6 +70,6 @@
              user
        WHERE
              id =#{id}
-    </delete>
+    </delete> -->
 
 </mapper>

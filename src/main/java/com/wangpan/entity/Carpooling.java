@@ -9,11 +9,14 @@ public class Carpooling {
 	private String id;
 	private String carPoolingName;
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private Date time;
-	private List<User> passengerList;
-	private User driver;
-	private SiteInfo startSiteInfo;
-	private SiteInfo endSiteInfo;
+	private Date createTime;
+	private int createBy;
+	private int startSiteId;
+	private int endSiteId;
+	
+	public Carpooling() {
+		super();
+	}
 	public String getId() {
 		return id;
 	}
@@ -26,34 +29,34 @@ public class Carpooling {
 	public void setCarPoolingName(String carPoolingName) {
 		this.carPoolingName = carPoolingName;
 	}
-	public Date getTime() {
-		return time;
+	public Date getCreateTime() {
+		return createTime;
 	}
-	public void setTime(Date time) {
-		this.time = time;
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
-	public List<User> getPassengerList() {
-		return passengerList;
+	public int getCreateBy() {
+		return createBy;
 	}
-	public void setPassengerList(List<User> passengerList) {
-		this.passengerList = passengerList;
+	public void setCreateBy(int createBy) {
+		this.createBy = createBy;
 	}
-	public User getDriver() {
-		return driver;
+	public int getStartSiteId() {
+		return startSiteId;
 	}
-	public void setDriver(User driver) {
-		this.driver = driver;
+	public void setStartSiteId(int startSiteId) {
+		this.startSiteId = startSiteId;
 	}
-	public SiteInfo getStartSiteInfo() {
-		return startSiteInfo;
+	public int getEndSiteId() {
+		return endSiteId;
 	}
-	public void setStartSiteInfo(SiteInfo startSiteInfo) {
-		this.startSiteInfo = startSiteInfo;
+	public void setEndSiteId(int endSiteId) {
+		this.endSiteId = endSiteId;
 	}
-	public SiteInfo getEndSiteInfo() {
-		return endSiteInfo;
+	@Override
+	public String toString() {
+		return "Carpooling [id=" + id + ", carPoolingName=" + carPoolingName + ", createTime=" + createTime
+				+ ", createBy=" + createBy + ", startSiteId=" + startSiteId + ", endSiteId=" + endSiteId + "]";
 	}
-	public void setEndSiteInfo(SiteInfo endSiteInfo) {
-		this.endSiteInfo = endSiteInfo;
-	}
+	
 }

@@ -11,7 +11,7 @@ public class User {
 	private String communityName;
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date createTime;
-	private String desc;
+	private String userDesc;
 	private int userType;  //0：无车族，1: 有车族
 	private String id;
 	
@@ -51,11 +51,11 @@ public class User {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	public String getDesc() {
-		return desc;
+	public String getUserDesc() {
+		return userDesc;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setUserDesc(String userDesc) {
+		this.userDesc = userDesc;
 	}
 	
 }
