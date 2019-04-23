@@ -1,4 +1,4 @@
-package com.wangpan.pojo;
+package com.wangpan.entity;
 
 import java.util.Date;
 import java.util.List;

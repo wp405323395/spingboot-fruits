@@ -1,4 +1,4 @@
-package com.wangpan.pojo;
+package com.wangpan.entity;
 
 public class SiteInfo {
 	private String id;

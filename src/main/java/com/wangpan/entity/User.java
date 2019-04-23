@@ -1,4 +1,4 @@
-package com.wangpan.pojo;
+package com.wangpan.entity;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ public class User {
 	private String password;
 	private String communityName;
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-	private Date createdTime;
+	private Date createTime;
 	private String desc;
 	private int userType;  //0：无车族，1: 有车族
 	private String id;
@@ -45,11 +45,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getCreatedTime() {
-		return createdTime;
+	public Date getCreateTime() {
+		return createTime;
 	}
-	public void setCreatedTime(Date createdTime) {
-		this.createdTime = createdTime;
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 	public String getDesc() {
 		return desc;

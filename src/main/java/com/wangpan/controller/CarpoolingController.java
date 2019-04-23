@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wangpan.pojo.Carpooling;
-import com.wangpan.pojo.SiteInfo;
-import com.wangpan.pojo.User;
+import com.wangpan.entity.Carpooling;
+import com.wangpan.entity.SiteInfo;
+import com.wangpan.entity.User;
 
 @RestController
 @RequestMapping("/carpooling")
@@ -48,7 +48,7 @@ public class CarpoolingController {
 		user2.setName("李四");
 		user2.setUserType(1);
 		user2.setCommunityName("万科");
-		user2.setCreatedTime(new Date());
+		user2.setCreateTime(new Date());
 		carpooling.setDriver(user2);
 		
 		carpooling.setTime(new Date());
