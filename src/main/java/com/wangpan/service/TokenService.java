@@ -22,6 +22,6 @@ public class TokenService {
         		.withSubject("用户")
         		.withExpiresAt(expiresDate)
                 .sign(Algorithm.HMAC256(user.getPassword()));
-        return "您的token是："+token;
+        return token;
 	}
 }

@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wangpan.annotation.PassToken;
 import com.wangpan.annotation.UserLoginToken;
 import com.wangpan.entity.User;
 import com.wangpan.mapper.UserMapper;
+import com.wangpan.result.ResultEnum;
+import com.wangpan.result.ResultUtil;
 import com.wangpan.service.TokenService;
 
 @RestController
@@ -25,13 +26,13 @@ public class UserController {
 	public Object login(@RequestBody User user) {
 		User userForBase = userMapper.findUserByName(user.getName());
 		if(userForBase == null) {
-			return "登陆失败用户不存在";
+			return ResultUtil.error(ResultEnum.BUSINESS_ERROR.getCode(), "登陆失败用户不存在");
 		} else {
 			if(!userForBase.getPassword().equals(user.getPassword())) {
-				return "您输入的账号或者密码不正确！";
+				return ResultUtil.error(ResultEnum.BUSINESS_ERROR.getCode(), "您输入的账号或者密码不正确！");
 			} else {
 				String token = tokenService.getToken(user);
-				return token;
+				return ResultUtil.success(token);
 			}
 		}
 	}
@@ -40,19 +41,19 @@ public class UserController {
 	@UserLoginToken
 	@RequestMapping("/queryAllDriver")
 	public Object queryAllDriver() {
-		return userMapper.findAll(1);
+		return ResultUtil.success(userMapper.findAll(1));
 	}
 	
 	//curl http://localhost:8986/fruits/user/queryAllPassenger
 	@GetMapping("/queryAllPassenger")
 	public Object queryAllPassenger() {
-		return userMapper.findAll(0);
+		return ResultUtil.success(userMapper.findAll(0));
 	}
 	
 	// curl -H "Content-Type: application/json" -X POST  --data '{"name":"zhangmeng", "password":"123456", "communityName":"fff", "userDesc":"www", "userType":0}' http://127.0.0.1:8986/fruits/user/addUser
 	@PostMapping("/addUser")
 	public Object insertUser(@RequestBody User user) {
 		userMapper.insertUser(user);
-		return user;
+		return ResultUtil.success();
 	}
 }
