@@ -37,7 +37,7 @@ public class UserController {
 		}
 	}
 	
-	//curl -H "token: 9666eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJ6aGFuZ3NhbiJ9.2BQvQP4Suhk1uO-aAdhap4hM1KoyuZosFVTJZbpoH70" http://localhost:8986/fruits/user/queryAllDriver
+	//curl -H "token: ${token}" http://localhost:8986/fruits/user/queryAllDriver
 	@UserLoginToken
 	@RequestMapping("/queryAllDriver")
 	public Object queryAllDriver() {
@@ -50,7 +50,8 @@ public class UserController {
 		return ResultUtil.success(userMapper.findAll(0));
 	}
 	
-	// curl -H "Content-Type: application/json" -X POST  --data '{"name":"zhangmeng", "password":"123456", "communityName":"fff", "userDesc":"www", "userType":0}' http://127.0.0.1:8986/fruits/user/addUser
+	// curl -H "Content-Type: application/json" -H "token:${token} " -X POST  --data '{"name":"zhangmeng", "password":"123456", "communityName":"fff", "userDesc":"www", "userType":0}' http://127.0.0.1:8986/fruits/user/addUser
+	@UserLoginToken
 	@PostMapping("/addUser")
 	public Object insertUser(@RequestBody User user) {
 		userMapper.insertUser(user);
