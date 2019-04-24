@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80011
 File Encoding         : 65001
 
-Date: 2019-04-23 16:31:11
+Date: 2019-04-24 17:04:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -66,29 +66,30 @@ INSERT INTO `siteinfo` VALUES ('2', '武汉火车站', '121212', '21212', '1');
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(45) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `community_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `user_desc` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `user_type` int(2) DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'zhangsan', '123456', '万科花山', '2019-04-10 00:00:00', '创建者', '1');
-INSERT INTO `user` VALUES ('2', '张三', '12121', '连头', '2019-04-23 00:00:00', '老司机', '1');
-INSERT INTO `user` VALUES ('3', '张三', '12121', '连头', '2019-04-23 00:00:00', '老司机', '1');
-INSERT INTO `user` VALUES ('4', '张三', '12121', '连头', '2019-04-23 00:00:00', '老司机', '1');
-INSERT INTO `user` VALUES ('5', '王五', '12121', '碧桂园', '2019-04-23 00:00:00', '老司机', '1');
-INSERT INTO `user` VALUES ('6', '张三', '12121', '连头', '2019-04-23 00:00:00', '老司机', '1');
-INSERT INTO `user` VALUES ('7', '找刘', '12121', '连头', '2019-04-23 00:00:00', '老司机', '1');
-INSERT INTO `user` VALUES ('19', 'zhangmeng', '123456', 'fff', '2019-04-23 13:23:48', 'www', '1');
-INSERT INTO `user` VALUES ('20', 'zhangmeng', '123456', 'fff', '2019-04-23 13:24:29', 'www', '1');
-INSERT INTO `user` VALUES ('21', 'zhangmeng', '123456', 'fff', '2019-04-23 13:24:30', 'www', '1');
-INSERT INTO `user` VALUES ('22', 'zhangmeng', '123456', 'fff', '2019-04-23 13:24:31', 'www', '1');
+INSERT INTO `user` VALUES ('2', '张21', '1212132', '连头', '2019-04-24 10:59:05', '老司机', '1');
+INSERT INTO `user` VALUES ('3', '张三34', '21', '连头', '2019-04-24 10:59:07', '老司机', '1');
+INSERT INTO `user` VALUES ('4', '张三53', '43434', '连头', '2019-04-24 10:59:08', '老司机', '1');
+INSERT INTO `user` VALUES ('5', '王五qw', '1212', '碧桂园', '2019-04-24 10:59:11', '老司机', '1');
+INSERT INTO `user` VALUES ('6', '张三asd', '1212143', '连头', '2019-04-24 10:59:12', '老司机', '1');
+INSERT INTO `user` VALUES ('7', '找刘gtr', '12121', '连头', '2019-04-24 10:59:13', '老司机', '1');
+INSERT INTO `user` VALUES ('19', 'zhangmengt', '123456', 'fff', '2019-04-24 10:59:14', 'www', '1');
+INSERT INTO `user` VALUES ('20', 'zhangmeng4', '123456', 'fff', '2019-04-24 10:59:15', 'www', '1');
+INSERT INTO `user` VALUES ('21', 'zhangmeng32', '123456', 'fff', '2019-04-24 10:59:15', 'www', '1');
+INSERT INTO `user` VALUES ('22', 'zhangmeng2', '123456', 'fff', '2019-04-24 10:59:19', 'www', '1');
 
 -- ----------------------------
 -- Table structure for `usercarpooling`
