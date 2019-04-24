@@ -9,4 +9,5 @@ public interface UserMapper {
 	void insertUser(User user);
 	User findUserById(int id);
 	List<User> findByCarpoolingId(String carpoolingId);
+	User findUserByName(String name);
 }
