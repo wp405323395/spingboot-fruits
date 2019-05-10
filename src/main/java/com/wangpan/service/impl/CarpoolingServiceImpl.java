@@ -25,9 +25,13 @@ public class CarpoolingServiceImpl implements CarpoolingService{
 	UserMapper userMapper;
 	@Autowired
 	SiteInfoMapper siteInfoMapper;
-	
+	@Autowired
+	UserMapper accountMapper;
 	@Override
 	public Object getCarpoolingDetail() {
+		User user = userMapper.selectById(1);
+		System.out.println(user);
+		User user2 = userMapper.findUserById(1);
 		List<CarpoolingDetailDTO> carpoolingDetailList = new ArrayList<CarpoolingDetailDTO>();
 		List<Carpooling> carpoolingList = carpoolingMapper.getAllCarpooling();
 		carpoolingList.forEach(carpooling->{
@@ -48,10 +52,10 @@ public class CarpoolingServiceImpl implements CarpoolingService{
 			});
 			carpoolingDetail.setPassengerList(userVOList);
 			//加载站点
-//			SiteInfo startSitInfo = siteInfoMapper.selectById(carpooling.getStartSiteId());
-//			SiteInfo endSitInfo = siteInfoMapper.selectById(carpooling.getEndSiteId());
-//			carpoolingDetail.setStartSitInfo(startSitInfo);
-//			carpoolingDetail.setEndSitInfo(endSitInfo);
+			SiteInfo startSitInfo = siteInfoMapper.selectById(carpooling.getStartSiteId());
+			SiteInfo endSitInfo = siteInfoMapper.selectById(carpooling.getEndSiteId());
+			carpoolingDetail.setStartSitInfo(startSitInfo);
+			carpoolingDetail.setEndSitInfo(endSitInfo);
 			carpoolingDetailList.add(carpoolingDetail);
 		});
 		return carpoolingDetailList;

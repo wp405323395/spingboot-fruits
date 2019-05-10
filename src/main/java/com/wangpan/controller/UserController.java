@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wangpan.annotation.UserLoginToken;
 import com.wangpan.entity.po.User;
-import com.wangpan.mapper.UserMapper;
 import com.wangpan.result.ResultEnum;
 import com.wangpan.result.ResultUtil;
 import com.wangpan.service.AccountService;
