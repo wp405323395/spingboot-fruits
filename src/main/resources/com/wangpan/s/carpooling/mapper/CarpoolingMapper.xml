@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--namespace是命名空间，是mapper接口的全路径-->
-<mapper namespace="com.wangpan.carpooling.mapper.CarpoolingMapper">
+<mapper namespace="com.wangpan.s.carpooling.mapper.CarpoolingMapper">
 
     <!--resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象-->
-    <resultMap id="userResultMap" type="com.wangpan.carpooling.entity.po.Carpooling">
+    <resultMap id="userResultMap" type="com.wangpan.s.carpooling.entity.po.Carpooling">
         <id property="id" column="id"></id>
         <id property="car_pooling_name" column="carPoolingName"></id>
         <id property="create_time" column="createTime"></id>
@@ -24,7 +24,7 @@
         <include refid="colums" />
         from  carpooling
     </select>
-     <insert id="insert" parameterType="com.wangpan.carpooling.entity.po.Carpooling" >
+     <insert id="insert" parameterType="com.wangpan.s.carpooling.entity.po.Carpooling" >
        INSERT INTO
             carpooling
             (car_pooling_name, create_by_id, start_site_id, end_site_id)
