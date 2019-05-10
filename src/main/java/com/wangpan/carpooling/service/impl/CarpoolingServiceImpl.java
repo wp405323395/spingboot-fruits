@@ -1,4 +1,4 @@
-package com.wangpan.service.impl;
+package com.wangpan.carpooling.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,15 +7,16 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wangpan.entity.dto.CarpoolingDetailDTO;
-import com.wangpan.entity.po.Carpooling;
-import com.wangpan.entity.po.SiteInfo;
-import com.wangpan.entity.po.User;
-import com.wangpan.entity.vo.UserVO;
-import com.wangpan.mapper.CarpoolingMapper;
-import com.wangpan.mapper.SiteInfoMapper;
-import com.wangpan.mapper.UserMapper;
-import com.wangpan.service.CarpoolingService;
+import com.wangpan.carpooling.entity.dto.CarpoolingDetailDTO;
+import com.wangpan.carpooling.entity.po.Carpooling;
+import com.wangpan.carpooling.entity.po.SiteInfo;
+import com.wangpan.carpooling.entity.po.User;
+import com.wangpan.carpooling.entity.vo.UserVO;
+import com.wangpan.carpooling.mapper.CarpoolingMapper;
+import com.wangpan.carpooling.mapper.SiteInfoMapper;
+import com.wangpan.carpooling.mapper.UserMapper;
+import com.wangpan.carpooling.service.CarpoolingService;
+
 
 @Service
 public class CarpoolingServiceImpl implements CarpoolingService{
@@ -29,9 +30,6 @@ public class CarpoolingServiceImpl implements CarpoolingService{
 	UserMapper accountMapper;
 	@Override
 	public Object getCarpoolingDetail() {
-		User user = userMapper.selectById(1);
-		System.out.println(user);
-		User user2 = userMapper.findUserById(1);
 		List<CarpoolingDetailDTO> carpoolingDetailList = new ArrayList<CarpoolingDetailDTO>();
 		List<Carpooling> carpoolingList = carpoolingMapper.getAllCarpooling();
 		carpoolingList.forEach(carpooling->{

@@ -1,10 +1,10 @@
-package com.wangpan.mapper;
+package com.wangpan.carpooling.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.wangpan.entity.po.Carpooling;
+import com.wangpan.carpooling.entity.po.Carpooling;
 
 @Mapper
 public interface CarpoolingMapper {

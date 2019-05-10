@@ -1,4 +1,4 @@
-package com.wangpan.entity.vo;
+package com.wangpan.carpooling.entity.po;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,9 +8,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
-public class UserVO implements Serializable {
+public class User implements Serializable{
+
 	private String id;
 	private String name;
+	private String password;
 	private String communityName;
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date createTime;

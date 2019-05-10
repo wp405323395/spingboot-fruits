@@ -1,11 +1,11 @@
-package com.wangpan.entity.dto;
+package com.wangpan.carpooling.entity.dto;
 
 import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.wangpan.entity.po.SiteInfo;
-import com.wangpan.entity.vo.UserVO;
+import com.wangpan.carpooling.entity.po.SiteInfo;
+import com.wangpan.carpooling.entity.vo.UserVO;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.wangpan.controller;
+package com.wangpan.carpooling.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wangpan.annotation.UserLoginToken;
-import com.wangpan.entity.po.User;
+import com.wangpan.carpooling.entity.po.User;
+import com.wangpan.carpooling.service.AccountService;
+import com.wangpan.carpooling.service.TokenService;
 import com.wangpan.result.ResultEnum;
 import com.wangpan.result.ResultUtil;
-import com.wangpan.service.AccountService;
-import com.wangpan.service.TokenService;
 
 @RestController
 @RequestMapping("/user")

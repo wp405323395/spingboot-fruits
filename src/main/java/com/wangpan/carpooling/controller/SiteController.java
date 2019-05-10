@@ -1,4 +1,4 @@
-package com.wangpan.controller;
+package com.wangpan.carpooling.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wangpan.entity.po.SiteInfo;
-import com.wangpan.mapper.SiteInfoMapper;
+import com.wangpan.carpooling.entity.po.SiteInfo;
+import com.wangpan.carpooling.mapper.SiteInfoMapper;
 
 
 @RestController
