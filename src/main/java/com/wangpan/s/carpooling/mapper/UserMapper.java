@@ -1,11 +1,11 @@
-package com.wangpan.carpooling.mapper;
+package com.wangpan.s.carpooling.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.wangpan.carpooling.entity.po.User;
+import com.wangpan.s.carpooling.entity.po.User;
 
 @Mapper
 public interface UserMapper extends BaseMapper<User>{

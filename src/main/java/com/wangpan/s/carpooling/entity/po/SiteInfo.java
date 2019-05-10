@@ -1,4 +1,4 @@
-package com.wangpan.carpooling.entity.po;
+package com.wangpan.s.carpooling.entity.po;
 
 import java.io.Serializable;
 

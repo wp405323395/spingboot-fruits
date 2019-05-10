@@ -1,6 +1,6 @@
-package com.wangpan.carpooling.service;
+package com.wangpan.s.carpooling.service;
 
-import com.wangpan.carpooling.entity.po.Carpooling;
+import com.wangpan.s.carpooling.entity.po.Carpooling;
 
 public interface CarpoolingService {
 

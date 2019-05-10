@@ -1,4 +1,4 @@
-package com.wangpan.carpooling.entity.vo;
+package com.wangpan.s.carpooling.entity.vo;
 
 import java.io.Serializable;
 import java.util.Date;

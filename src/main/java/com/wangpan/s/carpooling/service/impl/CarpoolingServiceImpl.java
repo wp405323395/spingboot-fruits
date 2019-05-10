@@ -1,4 +1,4 @@
-package com.wangpan.carpooling.service.impl;
+package com.wangpan.s.carpooling.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,15 +7,15 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wangpan.carpooling.entity.dto.CarpoolingDetailDTO;
-import com.wangpan.carpooling.entity.po.Carpooling;
-import com.wangpan.carpooling.entity.po.SiteInfo;
-import com.wangpan.carpooling.entity.po.User;
-import com.wangpan.carpooling.entity.vo.UserVO;
-import com.wangpan.carpooling.mapper.CarpoolingMapper;
-import com.wangpan.carpooling.mapper.SiteInfoMapper;
-import com.wangpan.carpooling.mapper.UserMapper;
-import com.wangpan.carpooling.service.CarpoolingService;
+import com.wangpan.s.carpooling.entity.dto.CarpoolingDetailDTO;
+import com.wangpan.s.carpooling.entity.po.Carpooling;
+import com.wangpan.s.carpooling.entity.po.SiteInfo;
+import com.wangpan.s.carpooling.entity.po.User;
+import com.wangpan.s.carpooling.entity.vo.UserVO;
+import com.wangpan.s.carpooling.mapper.CarpoolingMapper;
+import com.wangpan.s.carpooling.mapper.SiteInfoMapper;
+import com.wangpan.s.carpooling.mapper.UserMapper;
+import com.wangpan.s.carpooling.service.CarpoolingService;
 
 
 @Service

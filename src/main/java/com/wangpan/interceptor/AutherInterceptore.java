@@ -17,8 +17,8 @@ import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.wangpan.annotation.PassToken;
 import com.wangpan.annotation.UserLoginToken;
-import com.wangpan.carpooling.entity.po.User;
-import com.wangpan.carpooling.mapper.UserMapper;
+import com.wangpan.s.carpooling.entity.po.User;
+import com.wangpan.s.carpooling.mapper.UserMapper;
 
 public class AutherInterceptore implements HandlerInterceptor{
 	@Autowired

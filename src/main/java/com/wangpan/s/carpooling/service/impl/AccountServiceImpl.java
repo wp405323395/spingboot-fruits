@@ -1,4 +1,4 @@
-package com.wangpan.carpooling.service.impl;
+package com.wangpan.s.carpooling.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +7,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wangpan.carpooling.entity.po.User;
-import com.wangpan.carpooling.entity.vo.UserVO;
-import com.wangpan.carpooling.mapper.UserMapper;
-import com.wangpan.carpooling.service.AccountService;
+import com.wangpan.s.carpooling.entity.po.User;
+import com.wangpan.s.carpooling.entity.vo.UserVO;
+import com.wangpan.s.carpooling.mapper.UserMapper;
+import com.wangpan.s.carpooling.service.AccountService;
 
 @Service
 public class AccountServiceImpl implements AccountService {

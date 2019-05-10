@@ -1,4 +1,4 @@
-package com.wangpan.carpooling.service.impl;
+package com.wangpan.s.carpooling.service.impl;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.wangpan.carpooling.entity.po.User;
-import com.wangpan.carpooling.service.TokenService;
+import com.wangpan.s.carpooling.entity.po.User;
+import com.wangpan.s.carpooling.service.TokenService;
 
 @Service
 public class TokenServiceImpl implements TokenService {
