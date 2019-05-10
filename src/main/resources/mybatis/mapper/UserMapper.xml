@@ -5,7 +5,7 @@
 <mapper namespace="com.wangpan.mapper.UserMapper">
 
     <!--resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象-->
-    <resultMap id="userResultMap" type="com.wangpan.entity.User">
+    <resultMap id="userResultMap" type="com.wangpan.entity.po.User">
         <!-- <id property="name" column="name"></id>
         <id property="id" column="id"></id>
         <id property="password" column="password"></id>
@@ -17,7 +17,7 @@
 
     <!--sql – 可被其他语句引用的可重用语句块-->
     <sql id="colums">
-        id,name,password,community_name,create_time,user_desc,user_type
+        id,name,password,community_name,create_time,user_desc,user_type, license_plate,sex
     </sql>
 
     <select id="findAll" resultMap="userResultMap">
@@ -38,7 +38,7 @@
     </select>
     
 
-    <select id="insertUser" parameterType="com.wangpan.entity.User">
+    <select id="insertUser" parameterType="com.wangpan.entity.po.User">
         INSERT INTO
             user
             (name, password, community_name, user_desc, user_type)

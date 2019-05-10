@@ -8,23 +8,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wangpan.annotation.UserLoginToken;
-import com.wangpan.entity.User;
+import com.wangpan.entity.po.User;
 import com.wangpan.mapper.UserMapper;
 import com.wangpan.result.ResultEnum;
 import com.wangpan.result.ResultUtil;
+import com.wangpan.service.AccountService;
 import com.wangpan.service.TokenService;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-    private UserMapper userMapper;
+    private AccountService accountService;
 	@Autowired
 	private TokenService tokenService;
 	// curl -H "Content-Type: application/json" -X POST  --data '{"name":"zhangsan", "password":"123456"}' http://127.0.0.1:8986/fruits/user/login
 	@PostMapping("/login")
 	public Object login(@RequestBody User user) {
-		User userForBase = userMapper.findUserByName(user.getName());
+		User userForBase = accountService.findUserByName(user.getName());
 		if(userForBase == null) {
 			return ResultUtil.error(ResultEnum.BUSINESS_ERROR.getCode(), "登陆失败用户不存在");
 		} else {
@@ -36,25 +37,24 @@ public class UserController {
 			}
 		}
 	}
-	
 	//curl -H "token: ${token}" http://localhost:8986/fruits/user/queryAllDriver
 	@UserLoginToken
 	@RequestMapping("/queryAllDriver")
 	public Object queryAllDriver() {
-		return ResultUtil.success(userMapper.findAll(1));
+		return ResultUtil.success(accountService.findAll(1));
 	}
 	
 	//curl http://localhost:8986/fruits/user/queryAllPassenger
 	@GetMapping("/queryAllPassenger")
 	public Object queryAllPassenger() {
-		return ResultUtil.success(userMapper.findAll(0));
+		return ResultUtil.success(accountService.findAll(0));
 	}
 	
 	// curl -H "Content-Type: application/json" -H "token:${token} " -X POST  --data '{"name":"zhangmeng", "password":"123456", "communityName":"fff", "userDesc":"www", "userType":0}' http://127.0.0.1:8986/fruits/user/addUser
 	@UserLoginToken
 	@PostMapping("/addUser")
 	public Object insertUser(@RequestBody User user) {
-		userMapper.insertUser(user);
+		accountService.insertUser(user);
 		return ResultUtil.success();
 	}
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wangpan.entity.SiteInfo;
+import com.wangpan.entity.po.SiteInfo;
 import com.wangpan.mapper.SiteInfoMapper;
 
 

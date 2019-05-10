@@ -5,7 +5,7 @@
 <mapper namespace="com.wangpan.mapper.SiteInfoMapper">
 
     <!--resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象-->
-    <resultMap id="userResultMap" type="com.wangpan.entity.SiteInfo">
+    <resultMap id="userResultMap" type="com.wangpan.entity.po.SiteInfo">
         <!-- <id property="name" column="name"></id>
         <id property="id" column="id"></id>
         <id property="password" column="password"></id>

@@ -5,7 +5,7 @@
 <mapper namespace="com.wangpan.mapper.CarpoolingMapper">
 
     <!--resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象-->
-    <resultMap id="userResultMap" type="com.wangpan.entity.Carpooling">
+    <resultMap id="userResultMap" type="com.wangpan.entity.po.Carpooling">
         <!-- <id property="name" column="name"></id>
         <id property="id" column="id"></id>
         <id property="password" column="password"></id>
@@ -17,7 +17,7 @@
 
     <!--sql – 可被其他语句引用的可重用语句块-->
     <sql id="colums">
-        id,car_pooling_name, create_time, create_by, start_site_id, end_site_id
+        id,car_pooling_name, create_time, create_by_id, start_site_id, end_site_id
     </sql>
 
     <select id="getAllCarpooling" resultMap="userResultMap">
@@ -25,11 +25,11 @@
         <include refid="colums" />
         from  carpooling
     </select>
-     <insert id="insert" parameterType="com.wangpan.entity.Carpooling" >
+     <insert id="insert" parameterType="com.wangpan.entity.po.Carpooling" >
        INSERT INTO
             carpooling
-            (car_pooling_name, create_by, start_site_id, end_site_id)
+            (car_pooling_name, create_by_id, start_site_id, end_site_id)
         VALUES
-            (#{carPoolingName}, #{createBy}, #{startSiteId}, #{endSiteId})
+            (#{carPoolingName}, #{createById}, #{startSiteId}, #{endSiteId})
     </insert>
 </mapper>
