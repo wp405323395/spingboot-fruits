@@ -1,8 +1,8 @@
-package com.wangpan.user.service.impl;
+package com.wangpan.s.user.service.impl;
 
-import com.wangpan.user.entity.User;
-import com.wangpan.user.mapper.UserMapper;
-import com.wangpan.user.service.IUserService;
+import com.wangpan.s.user.entity.User;
+import com.wangpan.s.user.mapper.UserMapper;
+import com.wangpan.s.user.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author max_wang
- * @since 2019-05-10
+ * @since 2019-05-13
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {

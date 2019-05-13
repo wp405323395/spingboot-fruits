@@ -1,6 +1,6 @@
-package com.wangpan.user.service;
+package com.wangpan.s.user.service;
 
-import com.wangpan.user.entity.User;
+import com.wangpan.s.user.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author max_wang
- * @since 2019-05-10
+ * @since 2019-05-13
  */
 public interface IUserService extends IService<User> {
 

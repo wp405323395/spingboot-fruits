@@ -1,4 +1,4 @@
-package com.wangpan.user.entity;
+package com.wangpan.s.user.entity;
 
     import java.time.LocalDateTime;
     import java.io.Serializable;
@@ -12,7 +12,7 @@ package com.wangpan.user.entity;
     * </p>
 *
 * @author max_wang
-* @since 2019-05-10
+* @since 2019-05-13
 */
     @Data
         @EqualsAndHashCode(callSuper = false)
