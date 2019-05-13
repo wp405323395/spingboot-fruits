@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.wangpan.s.carpooling.entity.po.SiteInfo;
-import com.wangpan.s.carpooling.entity.vo.UserVO;
+import com.wangpan.s.user.entity.vo.UserVO;
 
 import lombok.Data;
 

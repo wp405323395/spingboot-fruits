@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 import com.wangpan.s.carpooling.entity.dto.CarpoolingDetailDTO;
 import com.wangpan.s.carpooling.entity.po.Carpooling;
 import com.wangpan.s.carpooling.entity.po.SiteInfo;
-import com.wangpan.s.carpooling.entity.po.User;
-import com.wangpan.s.carpooling.entity.vo.UserVO;
 import com.wangpan.s.carpooling.mapper.CarpoolingMapper;
 import com.wangpan.s.carpooling.mapper.SiteInfoMapper;
-import com.wangpan.s.carpooling.mapper.UserMapper;
 import com.wangpan.s.carpooling.service.CarpoolingService;
+import com.wangpan.s.user.entity.User;
+import com.wangpan.s.user.entity.vo.UserVO;
+import com.wangpan.s.user.mapper.UserMapper;
 
 
 @Service

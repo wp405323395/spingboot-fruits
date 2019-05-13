@@ -1,6 +1,6 @@
 package com.wangpan.s.carpooling.service;
 
-import com.wangpan.s.carpooling.entity.po.User;
+import com.wangpan.s.user.entity.User;
 
 public interface TokenService {
 	public String getToken(User user);

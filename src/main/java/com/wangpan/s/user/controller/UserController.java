@@ -1,24 +1,34 @@
-package com.wangpan.s.carpooling.controller;
+package com.wangpan.s.user.controller;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wangpan.annotation.UserLoginToken;
 import com.wangpan.result.ResultEnum;
 import com.wangpan.result.ResultUtil;
-import com.wangpan.s.carpooling.entity.po.User;
-import com.wangpan.s.carpooling.service.AccountService;
 import com.wangpan.s.carpooling.service.TokenService;
+import com.wangpan.s.user.entity.User;
+import com.wangpan.s.user.service.IUserService;
 
+/**
+ * <p>
+ *  前端控制器
+ * </p>
+ *
+ * @author max_wang
+ * @since 2019-05-13
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-    private AccountService accountService;
+    private IUserService accountService;
 	@Autowired
 	private TokenService tokenService;
 	// curl -H "Content-Type: application/json" -X POST  --data '{"name":"zhangsan", "password":"123456"}' http://127.0.0.1:8986/fruits/user/login
