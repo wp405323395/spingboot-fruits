@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wangpan.annotation.UserLoginToken;
 import com.wangpan.s.carpooling.entity.po.Carpooling;
 import com.wangpan.s.carpooling.service.CarpoolingService;
 
@@ -20,6 +21,7 @@ public class CarpoolingController {
 	
 	// curl http://localhost:8986/fruits/carpooling/queryAllCarpooling
 	@GetMapping("/queryAllCarpooling")
+	@UserLoginToken
 	public Object queryAllCarpooling() {
 		return carpoolingService.getCarpoolingDetail();
 	}
