@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.wangpan.s")
+@MapperScan("com.wangpan.mapper")
 public class FruitsApplication {
 
 	public static void main(String[] args) {
