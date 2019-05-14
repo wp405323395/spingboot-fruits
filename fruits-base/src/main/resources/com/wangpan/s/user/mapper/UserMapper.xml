@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace是命名空间，是mapper接口的全路径-->
+<mapper namespace="com.wangpan.s.user.mapper.UserMapper">
+
+    <!--resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象-->
+    <resultMap id="userResultMap" type="com.wangpan.s.user.entity.User">
+        <!-- <id property="name" column="name"></id>
+        <id property="id" column="id"></id>
+        <id property="password" column="password"></id>
+        <id property="communityName" column="community_name"></id>
+        <id property="createdTime" column="created_time"></id>
+        <id property="desc" column="desc"></id>
+        <id property="userType" column="user_type"></id> -->
+    </resultMap>
+
+    <!--sql – 可被其他语句引用的可重用语句块-->
+    <sql id="colums">
+        id,name,password,community_name,create_time,user_desc,user_type, license_plate,sex
+    </sql>
+
+    <select id="findAll" resultMap="userResultMap">
+        select
+        <include refid="colums" />
+        from  user where user.user_type = #{userType}
+    </select>
+    
+    <select id="findUserById" resultMap="userResultMap">
+        select
+        <include refid="colums" />
+        from  user where user.id = #{id}
+    </select>
+    <select id="findUserByName" resultMap="userResultMap">
+        select
+        <include refid="colums" />
+        from  user where user.name = #{name}
+    </select>
+    
+
+    <select id="insertUser" parameterType="com.wangpan.s.user.entity.User">
+        INSERT INTO
+            user
+            (name, password, community_name, user_desc, user_type)
+        VALUES
+            (#{name}, #{password}, #{communityName}, #{userDesc}, #{userType})
+    </select>
+    
+    <select id="findByCarpoolingId" resultMap="userResultMap">
+        select t1.id, t1.name, t1.password, t1.community_name, t1.create_time, t1.user_type from user t1, userCarpooling t2  where t1.id = t2.user_id;
+    </select>
+    
+    
+
+<!--     <insert id="insert" parameterType="com.wangpan.entity.User" >
+       INSERT INTO
+            user
+            (username,age,pwd)
+        VALUES
+            (#{name}, #{age}, #{pwd})
+    </insert>
+
+    <update id="update" parameterType="com.wangpan.entity.User" >
+        UPDATE
+        users
+        SET
+        <if test="username != null">username = #{username},</if>
+        <if test="pwd != null">pwd = #{pwd},</if>
+        username = #{username}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long" >
+       DELETE FROM
+             user
+       WHERE
+             id =#{id}
+    </delete> -->
+
+</mapper>
