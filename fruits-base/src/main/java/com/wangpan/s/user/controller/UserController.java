@@ -47,18 +47,6 @@ public class UserController {
 			}
 		}
 	}
-	//curl -H "token: ${token}" http://localhost:8986/fruits/user/queryAllDriver
-	@UserLoginToken
-	@RequestMapping("/queryAllDriver")
-	public Result<Object> queryAllDriver() {
-		return ResultUtil.success(accountService.findAll(1));
-	}
-	
-	//curl http://localhost:8986/fruits/user/queryAllPassenger
-	@GetMapping("/queryAllPassenger")
-	public Result<Object> queryAllPassenger() {
-		return ResultUtil.success(accountService.findAll(0));
-	}
 	
 	// curl -H "Content-Type: application/json" -H "token:${token} " -X POST  --data '{"name":"zhangmeng", "password":"123456", "communityName":"fff", "userDesc":"www", "userType":0}' http://127.0.0.1:8986/fruits/user/addUser
 	@UserLoginToken

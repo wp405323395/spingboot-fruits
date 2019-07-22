@@ -13,9 +13,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author max_wang
- * @since 2019-05-13
+ * @since 2019-07-22
  */
 public interface IUserService extends IService<User> {
-	public User findUserByName(String userName);
-	public int insertUser(User user);
+	List<UserVO> findAll(int type);
 }

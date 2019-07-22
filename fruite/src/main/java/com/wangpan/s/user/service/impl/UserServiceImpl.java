@@ -19,19 +19,23 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author max_wang
- * @since 2019-05-13
+ * @since 2019-07-22
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 	@Autowired
-    private UserMapper userMapper;
+	private UserMapper userMapper;
 	@Override
-	public User findUserByName(String userName) {
-		User userForBase = userMapper.findUserByName(userName);
-		return userForBase;
+	public List<UserVO> findAll(int type) {
+		// TODO Auto-generated method stub
+		List<User> userList = userMapper.findAll(type);
+		List<UserVO> userVOList = new ArrayList<UserVO>();
+		userList.forEach(item->{
+			UserVO userVO = new UserVO();
+			BeanUtils.copyProperties(item, userVO);
+			userVOList.add(userVO);
+		});
+		return userVOList;
 	}
-	@Override
-	public int insertUser(User user) {
-		return userMapper.insertUser(user);
-	}
+
 }

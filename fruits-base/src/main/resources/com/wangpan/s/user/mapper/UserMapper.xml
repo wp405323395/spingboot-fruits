@@ -19,12 +19,6 @@
     <sql id="colums">
         id,name,password,community_name,create_time,user_desc,user_type, license_plate,sex
     </sql>
-
-    <select id="findAll" resultMap="userResultMap">
-        select
-        <include refid="colums" />
-        from  user where user.user_type = #{userType}
-    </select>
     
     <select id="findUserById" resultMap="userResultMap">
         select
@@ -46,36 +40,5 @@
             (#{name}, #{password}, #{communityName}, #{userDesc}, #{userType})
     </select>
     
-    <select id="findByCarpoolingId" resultMap="userResultMap">
-        select t1.id, t1.name, t1.password, t1.community_name, t1.create_time, t1.user_type from user t1, userCarpooling t2  where t1.id = t2.user_id;
-    </select>
-    
-    
-
-<!--     <insert id="insert" parameterType="com.wangpan.entity.User" >
-       INSERT INTO
-            user
-            (username,age,pwd)
-        VALUES
-            (#{name}, #{age}, #{pwd})
-    </insert>
-
-    <update id="update" parameterType="com.wangpan.entity.User" >
-        UPDATE
-        users
-        SET
-        <if test="username != null">username = #{username},</if>
-        <if test="pwd != null">pwd = #{pwd},</if>
-        username = #{username}
-        WHERE
-        id = #{id}
-    </update>
-
-    <delete id="delete" parameterType="java.lang.Long" >
-       DELETE FROM
-             user
-       WHERE
-             id =#{id}
-    </delete> -->
 
 </mapper>
