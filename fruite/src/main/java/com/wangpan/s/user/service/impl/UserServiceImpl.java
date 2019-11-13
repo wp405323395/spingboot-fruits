@@ -37,5 +37,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 		});
 		return userVOList;
 	}
+	@Override
+	public User findUserByName(String userName) {
+		User userForBase = userMapper.findUserByName(userName);
+		return userForBase;
+	}
+	@Override
+	public int insertUser(User user) {
+		return userMapper.insertUser(user);
+	}
 
 }
